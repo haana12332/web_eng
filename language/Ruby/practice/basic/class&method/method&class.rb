@@ -156,5 +156,3 @@ a3= Article.new(title: "nice day")
 a4= Article.new(title: "banana day")
 
 Article.all_title
-
-### test
