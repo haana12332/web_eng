@@ -14,7 +14,3 @@
 2. Ruby(Rails)
 
 ## 制作物(implementation)
-1. ハッカソン
-2. TODOアプリ
-3. MAP×SNSアプリ
-
