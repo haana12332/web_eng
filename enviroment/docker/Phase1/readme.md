@@ -16,12 +16,16 @@
     Dockerの操作方法はLinuxコマンドが基盤なため
     1. **Linux基礎知識**
         **シェル：** CLIアプリケーションのこと
+
         <img src="/asset/image/Linux_relation.png" width="500" alt="説明">
+
         **ターミナル：** シェルのUI部分（コマンド操作部分）
+
         コメント：ターミナルはあくまで画面担当、シェルがコマンドを解釈する担当 ＜－ MVCのような役割分担するほうが開発しやすい。
 
         **CLI操作メリット**
-        AI使えーーーーー
+        * AIと相性いい
+        * まとめてファイル操作効率的
     ---
     2. **Linuxコマンド一覧**
 
@@ -66,9 +70,66 @@
     2. **全体の仕組み**
     <img src="/asset/image/docker_flow.png" width="500">
     
-        名|**役割**|
-        |---|---|
-        |**クライアント**|ターミナルで以来を出す場所|
-        |**デーモン**|Dockerを起動時にずっと裏で動いている場所|
-        |**レジストリ**|クラウド上にあるDockerのひな型の内容を保管している場所|
 
+    |名|**役割**|
+    |---|---|
+    |**クライアント**|ターミナルで以来を出す場所|
+    |**デーモン**|Dockerを起動時にずっと裏で動いている場所|
+    |**レジストリ**|クラウド上にあるDockerのひな型の内容を保管している場所|
+---
+
+3. [Docker超入門 アプリを作成・実行](https://www.youtube.com/watch?v=ZxwHVaq7FJo&t=189s)
+    #### 目標
+    Dockerのイメージとコンテナの基本的な操作を覚える。
+
+    <img src="/asset/image/create_container_flow.png" width = "200" >
+    **コンテナ作成までの流れ**
+
+    #### コンテナ起動までのコマンド
+
+    **イメージを作成**
+    `docker image build -t イメージ名`
+    **イメージがあるかの確認**
+    `docker image ls`
+    **コンテナ作成**
+    `docker container run -p 元ポート：Dockerポート --name コンテナ名 イメージ名`
+
+    Tips
+    **コマンド勉強**
+    `docker ○○ --help`
+
+    #### コンテナの開発ライフサイクル用コマンド
+    Dockerのコンテナはプロダクト開発において以下を繰り返す
+    <img src="/asset/image/container_lifecycle.png" width = "200" >
+
+    **コンテナ停止方法**
+    `docker container stop コンテナ名`
+    **コンテナ削除方法**
+    `docker container rm コンテナ名`
+
+    #### コンテナ操作でよく使用するコマンド
+    **ログ管理**
+    `docker container logs コンテナ名`
+    **コマンド実行**: 実行中のコンテナで使用したいコマンドを実行できる
+    `docker container exec`
+    **お掃除**:使用しないすべてのイメージ、コンテナをまとめて削除
+    `docker system prune -a`
+    
+    
+--
+
+1. [Docker超入門 Dockerfile](https://www.youtube.com/watch?v=UsUUp7hJClk)
+
+---
+
+5. [Docker超入門 Docker ComposeでRailsを構築](https://www.youtube.com/watch?v=ltDdZAJli8c)
+
+---
+
+6. [Docker超入門 本番環境に公開](https://www.youtube.com/watch?v=uQf9968RWWo)
+
+---
+
+1. [Docker超入門 CI/CDを構築](https://www.youtube.com/watch?v=bmXoupfX_r0)
+   
+---
